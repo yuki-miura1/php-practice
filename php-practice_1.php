@@ -20,11 +20,7 @@ $device = "windows";
 if ($device == "windows") {
     echo "使用OSは、windowsです。";
 } else {
-    if ($device == "mac") {
-        echo "使用OSは、macです。";
-    } else {
-        echo "どちらでもありません。";
-    }
+    echo ($device == "mac") ? "使用OSは、macです。" : "どちらでもありません。";
 }
 
 // Q5 条件分岐-2 三項演算子
@@ -80,30 +76,27 @@ $kanto = [
   "埼玉県" => "さいたま市",
   "栃木県" => "宇都宮市",
   "群馬県" => "前橋市",
-  "茨城県" => "水戸市"
-];
-
-$other = [
+  "茨城県" => "水戸市",
   "愛知県" => "名古屋市",
   "大阪府" => "大阪市"
 ];
 
 foreach ($kanto as $prefecture => $city) {
-    echo $prefecture . "の県庁所在地は、" . $city . "です。 \n";
-}
-
-foreach ($other as $prefecture => $city) {
-    echo $prefecture . "は関東地方ではありません。\n";
+    if ($prefecture == "愛知県" || $prefecture == "大阪府") {
+        echo $prefecture . "は関東地方ではありません。\n";
+    } else {
+        echo $prefecture . "の県庁所在地は、" . $city . "です。 \n";
+    }
 }
 
 // Q10 関数-1
 <?php
 function hello($name) {
-    echo $name . "さん、こんにちは。\n";
+    return $name . "さん、こんにちは。\n";
 }
 
-hello("鈴木");
-hello("田中");
+echo hello("鈴木");
+echo hello("田中");
 
 // Q11 関数-2
 <?php
