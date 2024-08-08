@@ -61,9 +61,9 @@ $kanto = [
     "茨城県" => "水戸市"
 ];
 
-foreach ($kanto as $ken => $city) {
-    if ($ken == "埼玉県") {
-        echo $ken . "の県庁所在地は、" . $city . "です。";
+foreach ($kanto as $prefecture => $city) {
+    if ($prefecture == "埼玉県") {
+        echo $prefecture . "の県庁所在地は、" . $city . "です。";
     }
 }
 
